@@ -23,6 +23,7 @@ convertBtn.addEventListener("click", () => {
     }
 
     const converted = (amount / rates[currency]).toFixed(2);
-    resultDiv.textContent = `${amount} руб = ${converted} ${currency}`;
+    resultDiv.textContent = `${amount} ₽ = ${converted} ${currency}`;
     resultDiv.className = "";
+    amountInput.style.borderColor = "#6c63ff";
 });

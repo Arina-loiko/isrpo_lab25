@@ -3,14 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab24 - Modern JavaScript</title>
+    <title>Конвертер валют</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Современный JavaScript</h1>
-        <h2>ES6+ возможности</h2>
+        <h1>Конвертер валют</h1>
+        <div class="converter">
+            <input type="number" id="amount" placeholder="Введите сумму в рублях">
+            <select id="currency">
+                <option value="USD">USD - Доллар</option>
+                <option value="EUR">EUR - Евро</option>
+                <option value="GBP">GBP - Фунт стерлингов</option>
+                <option value="BYN">BYN - Белорусский рубль</option>
+                <option value="CNY">CNY - Юань</option>
+                <option value="JPY">JPY - Японская иена</option>
+            </select>
+            <button id="convertBtn">Конвертировать</button>
+            <div id="result"></div>
+        </div>
     </div>
-    <script type="module" src="js/main.js"></script>
+    <script src="js/converter.js"></script>
 </body>
 </html>

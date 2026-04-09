@@ -124,8 +124,6 @@
 //     .then(msg => console.log(msg))
 //     .catch(err => console.log(err));
 
-// ===== Шаг 10. Async/Await =====
-
 console.log("Async/Await");
 
 function delay(ms) {

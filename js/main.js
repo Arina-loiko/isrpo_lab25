@@ -289,3 +289,131 @@ console.log("Fetch API");
 //     }
 // }
 // createPost();
+
+console.log("Optional Chaining");
+
+// const user1 = {
+//     name: "Андрей",
+//     address: {
+//         city: "Волжский",
+//         street: "Пушкина",
+//     },
+// };
+// const user2 = {
+//     name: "Дмитрий",
+// };
+// const city1 = user2.address && user2.address.city;
+// console.log("Город (старый способ):", city1);
+// const city2 = user2.address?.city;
+// console.log("Город (новый способ):", city2);
+// const street = user1.address?.street;
+// console.log("Улица:", street);
+
+// const admin = {
+//     name: "Администратор",
+//     permissions: {
+//         canDelete: () => true,
+//     },
+// };
+// const guest = {
+//     name: "Гость",
+// };
+// console.log("Админ может удалять?", admin.permissions?.canDelete?.());
+// console.log("Гость может удалять?", guest.permissions?.canDelete?.());
+
+// const company = {
+//     name: "Tech Corp",
+//     employees: [
+//         { name: "Надежда", role: "Developer" },
+//         { name: "Анна", role: "Designer" },
+//     ],
+// };
+// const startup = {
+//     name: "New Startup",
+// };
+// console.log("Первый сотрудник:", company.employees?.[0]?.name);
+// console.log("Первый сотрудник стартапа:", startup.employees?.[0]?.name);
+
+console.log("Nullish Coalescing");
+
+// const value1 = 0;
+// const value2 = "";
+// const value3 = false;
+// const value4 = null;
+// const value5 = undefined;
+// console.log('value1 || "default":', value1 || "default");
+// console.log('value2 || "default":', value2 || "default");
+// console.log('value3 || "default":', value3 || "default");
+// console.log('value1 ?? "default":', value1 ?? "default");
+// console.log('value2 ?? "default":', value2 ?? "default");
+// console.log('value3 ?? "default":', value3 ?? "default");
+// console.log('value4 ?? "default":', value4 ?? "default");
+// console.log('value5 ?? "default":', value5 ?? "default");
+
+// function displayUserSettings(settings) {
+//     const theme = settings?.theme ?? "light";
+//     const fontSize = settings?.fontSize ?? 14;
+//     const notifications = settings?.notifications ?? true;
+//     console.log("Настройки пользователя:");
+//     console.log("Тема:", theme);
+//     console.log("Размер шрифта:", fontSize);
+//     console.log("Уведомления:", notifications);
+// }
+// displayUserSettings({ theme: "dark", fontSize: 16 });
+// displayUserSettings({ notifications: false });
+// displayUserSettings({});
+
+// const apiResponse = {
+//     data: {
+//         user: {
+//             profile: {
+//                 settings: {
+//                     language: "ru",
+//                 },
+//             },
+//         },
+//     },
+// };
+// const language = apiResponse?.data?.user?.profile?.settings?.language ?? "en";
+// console.log("Язык:", language);
+// const emptyResponse = {};
+// const defaultLanguage = emptyResponse?.data?.user?.profile?.settings?.language ?? "en";
+// console.log("Язык по умолчанию:", defaultLanguage);
+
+const order = {
+    customer: {
+        name: "Мария",
+        email: "maria@example.com",
+    },
+    shipping: {
+        address: {
+            city: "Москва",
+            street: "Ленина 10",
+        },
+        method: "Курьер",
+    },
+    payment: {
+        method: "Карта",
+        status: "Оплачено",
+    },
+};
+
+function displayOrder(o) {
+    const customerName = o?.customer?.name ?? "Неизвестный покупатель";
+    const customerEmail = o?.customer?.email ?? "Email не указан";
+    const city = o?.shipping?.address?.city ?? "Город не указан";
+    const street = o?.shipping?.address?.street ?? "Улица не указана";
+    const shippingMethod = o?.shipping?.method ?? "Метод доставки не указан";
+    const paymentMethod = o?.payment?.method ?? "Метод оплаты не указан";
+    const paymentStatus = o?.payment?.status ?? "Статус не известен";
+
+    console.log("Покупатель:", customerName);
+    console.log("Email:", customerEmail);
+    console.log("Город:", city);
+    console.log("Улица:", street);
+    console.log("Доставка:", shippingMethod);
+    console.log("Оплата:", paymentMethod);
+    console.log("Статус оплаты:", paymentStatus);
+}
+
+displayOrder(order);
